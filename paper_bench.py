@@ -1,7 +1,7 @@
-base_dir = "/devdata/data/rq3-1/"
+base_dir = "./samples/"
 
 
-out_dir = "./rq3-1/"
+out_dir = "./samples_res/"
 
 
 import os
