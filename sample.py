@@ -25,5 +25,5 @@ def sample(in_dir, out_dir):
 
 if __name__ == "__main__":
     data_dir = sys.argv[1]
-    out_dir = sys.argv[2]
+    out_dir = "./samples/"
     sample(data_dir, out_dir)
