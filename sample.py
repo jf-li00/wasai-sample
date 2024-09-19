@@ -3,6 +3,7 @@ import os
 import sys
 
 SAMPLE_SIZE = 10
+SAMPLE_DIR = "./samples/"
 
 
 def sample(in_dir, out_dir):
@@ -25,5 +26,5 @@ def sample(in_dir, out_dir):
 
 if __name__ == "__main__":
     data_dir = sys.argv[1]
-    out_dir = "./samples/"
+    out_dir = SAMPLE_DIR
     sample(data_dir, out_dir)
