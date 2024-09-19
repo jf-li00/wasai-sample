@@ -71,21 +71,22 @@ def run():
             setting.isBlockinfoDep = config['vuls'][5]
             '''
             # print(wasmPath, abiPath)
+            time_limit = 300
 
             # cmd = f'python -m bin.fuzz {wasmPath} {abiPath} NULL 500000 300 {fuzzTarget} --detect_vuls 200000 --nostdout' # OOB
             if type == "fakenotif":
-                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 30000 300 {fuzzTarget} --detect_vuls 002000' #FAKE NOTIF
+                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 30000 {time_limit} {fuzzTarget} --detect_vuls 002000' #FAKE NOTIF
             elif type == "fakeos" :
-                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300 300 {fuzzTarget} --detect_vuls 020000'   #FAKE EOS
+                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300 {time_limit} {fuzzTarget} --detect_vuls 020000'   #FAKE EOS
             elif type == "missauth":
-                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 30000 300 {fuzzTarget} --detect_vuls 000200'   #PM
+                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 30000 {time_limit} {fuzzTarget} --detect_vuls 000200'   #PM
             elif type == "blockinfo":
-                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300 300 {fuzzTarget} --detect_vuls 000002'   # blockinfoDep
+                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300 {time_limit} {fuzzTarget} --detect_vuls 000002'   # blockinfoDep
             elif type == "rollback":
-                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300000  300 {fuzzTarget} --detect_vuls 000020'   # rollback
+                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300000  {time_limit} {fuzzTarget} --detect_vuls 000020'   # rollback
             else:
 
-                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300 300 {fuzzTarget} --detect_vuls 020000'   #FAKE EOS
+                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300 {time_limit} {fuzzTarget} --detect_vuls 020000'   #FAKE EOS
 
             os.system("rm ./rt/* -r")
             if os.system(cmd) == 0:
