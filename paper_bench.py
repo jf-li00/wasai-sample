@@ -5,6 +5,9 @@ out_dir = "./samples_res/"
 
 
 import os
+import time
+
+start = time.time()
 
 all_cmds = []
 for subdir in os.listdir(base_dir):
@@ -19,6 +22,9 @@ for subdir in os.listdir(base_dir):
     print(cmd)
     all_cmds.append(cmd)
     os.system(cmd)
+
+end = time.time()
+print(f"used time: {end - start}")
 
 def run_cmd(cmd):
     os.system(cmd)

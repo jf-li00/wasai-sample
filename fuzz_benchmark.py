@@ -71,7 +71,7 @@ def run():
             setting.isBlockinfoDep = config['vuls'][5]
             '''
             # print(wasmPath, abiPath)
-            time_limit = 300
+            time_limit = 20
 
             # cmd = f'python -m bin.fuzz {wasmPath} {abiPath} NULL 500000 300 {fuzzTarget} --detect_vuls 200000 --nostdout' # OOB
             if type == "fakenotif":
