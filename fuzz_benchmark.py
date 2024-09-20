@@ -75,7 +75,7 @@ def run():
 
             # cmd = f'python -m bin.fuzz {wasmPath} {abiPath} NULL 500000 300 {fuzzTarget} --detect_vuls 200000 --nostdout' # OOB
             if type == "fakenotif":
-                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 30000 {time_limit} {fuzzTarget} --detect_vuls 002000' #FAKE NOTIF
+                cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 30000 {3*time_limit} {fuzzTarget} --detect_vuls 002000' #FAKE NOTIF
             elif type == "fakeos" :
                 cmd = f'python -m bin.fuzz {wasmPath} {abiPath} {contractName} 300 {time_limit} {fuzzTarget} --detect_vuls 020000'   #FAKE EOS
             elif type == "missauth":
