@@ -1,6 +1,6 @@
 ```bash
-python samples.py <dataset_dir>
-python paper_bench.py
+python sample.py <dataset_dir>
+python detect_samples.py
 python show_sample_res.py
 ```
 
